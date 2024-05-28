@@ -32,6 +32,11 @@ const propertyRoutes = require('./routes/propertyRoutes');
 app.use('/api', authRoutes);
 app.use('/api', propertyRoutes);
 
+// Health check route
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
